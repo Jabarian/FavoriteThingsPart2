@@ -1,0 +1,56 @@
+#include "BookList.h"
+
+int main()
+{
+	// welcome message
+	cout << "**** WELCOME to My Favorite Things ****" << endl;
+	cout << "My Favorite Thing is 'Book', So, in this program" << endl;
+	cout << "you can track Book data" << endl << endl;
+
+	// Create BookList class's object
+	BookList bookList;
+
+	int choice = 0;
+	while (choice != 5)
+	{
+		// display menu
+		cout << "1. Read From File." << endl;
+		cout << "2. Add New Book To List." << endl;
+		cout << "3. View All Books In List." << endl;
+		cout << "4. Save To File." << endl;
+		cout << "5. Quit." << endl;
+		cout << "Your Choice > ";
+		cin >> choice;
+
+		if (choice == 1)
+		{
+			bookList.readFromFile(); 
+			cout << "File read success" << endl;
+		}
+		else if (choice == 2)
+		{
+			// call function to add a new book
+			bookList.addBook();
+		}
+		else if (choice == 3)
+		{
+			cout << bookList;
+		}
+		else if (choice == 4)
+		{
+			bookList.saveToFile();
+			cout << "File write success" << endl;
+		}
+		else if (choice == 5)
+		{
+			cout << "Thank You !!";
+		}
+		else
+		{
+			cout << "Invalid Choice!" << endl;
+		}
+		cout << endl;
+	}
+
+	return 0;
+}
